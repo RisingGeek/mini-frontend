@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* Modal root for React Portal */}
+        <div id="modal-root"></div>
+      </body>
     </html>
   );
 }
