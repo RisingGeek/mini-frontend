@@ -15,7 +15,7 @@ interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
     const { type, btnType, className = "", onClick, children } = props;
-    const commonClasses = "py-2 px-4 rounded"
+    const commonClasses = "py-2 px-1.5 rounded"
     const getBtnClass = () => {
         switch(btnType) {
             case ButtonType.PRIMARY:

@@ -1,6 +1,6 @@
 "use client"
 
-import LoginForm from "@/modules/LoginForm";
+import SignupForm from "@/modules/SignupForm";
 
 export default function Home() {
   const closeModal = () => (false);
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <h1 className="text-lg">hello</h1>
-     <LoginForm />
+     <SignupForm />
     </main>
   );
 }

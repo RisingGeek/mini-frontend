@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from './Modal'
+import Modal from '../components/Modal'
 import ShowPassword from '@/components/ShowPassword';
 import HidePassword from '@/components/HidePassword';
 import Input from '@/components/Input';
@@ -7,14 +7,12 @@ import Button, { ButtonType } from '@/components/Button';
 
 const LoginForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formValues, setFormValues] = useState({username: "", password: ""});
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
-    console.log('Login submitted:', { email, password });
   };
 
   const handleRegisterClick = () => {
@@ -31,20 +29,17 @@ const LoginForm = () => {
       title="WELCOME BACK"
       subTitle="Log into your account">
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
           <Input
-            type="email"
-            value={email}
+            type="text"
+            value={formValues.username}
             placeholder="Enter your email or username"
             label="Email or Username"
             required
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setFormValues({...formValues, username: e.target.value})}
           />
-        </div>
-        <div className="mb-6">
           <Input
             type={showPassword ? "text" : "password"}
-            value={password}
+            value={formValues.password}
             placeholder="Enter your password"
             label={(<>Password
               <a href="#" className="text-blue-500 text-sm hover:underline">
@@ -59,11 +54,8 @@ const LoginForm = () => {
             >
               {showPassword ? <ShowPassword /> : <HidePassword />}
             </div>)}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setFormValues({...formValues, password: e.target.value})}
           />
-        </div>
-        <div className="flex items-center justify-between">
-
           <Button
             type="submit"
             btnType={ButtonType.PRIMARY}
@@ -72,7 +64,6 @@ const LoginForm = () => {
           >
             Login Now
           </Button>
-        </div>
         <div>
           <span className="text-gray-500">Not registered yet?</span>
           <Button
@@ -89,4 +80,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default LoginForm;
