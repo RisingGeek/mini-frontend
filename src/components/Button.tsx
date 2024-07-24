@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 
 export enum ButtonType {
     PRIMARY,
@@ -9,12 +9,12 @@ interface ButtonProps {
     type: "button" | "reset" | "submit";
     btnType: ButtonType;
     className?: string;
-    onClick: () => void;
+    onClick: MouseEventHandler<HTMLButtonElement>;
     children: ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
-    const { type, btnType, className = "", children } = props;
+    const { type, btnType, className = "", onClick, children } = props;
     const commonClasses = "py-2 px-4 rounded"
     const getBtnClass = () => {
         switch(btnType) {
@@ -28,6 +28,7 @@ const Button = (props: ButtonProps) => {
         <button
             type={type}
             className={`${commonClasses} ${getBtnClass()} ${className}`}
+            onClick={onClick}
         >
             {children}
         </button>

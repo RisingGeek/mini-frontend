@@ -17,6 +17,10 @@ const LoginForm = () => {
     console.log('Login submitted:', { email, password });
   };
 
+  const handleRegisterClick = () => {
+    
+  }
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -70,14 +74,13 @@ const LoginForm = () => {
           </Button>
         </div>
         <div>
-          <span>Not registered yet?</span>
-          <button
-            type="submit"
-            className="hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          <span className="text-gray-500">Not registered yet?</span>
+          <Button
+            type="button"
+            btnType={ButtonType.TEXT}
+            className="text-white"
+            onClick={handleRegisterClick}
           >
-            Register &rarr;
-          </button>
-          <Button type="button" btnType={ButtonType.PRIMARY}>
             Register &rarr;
           </Button>
         </div>

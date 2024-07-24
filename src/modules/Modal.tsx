@@ -21,7 +21,7 @@ const Modal = (props: ModalProps) => {
 
   return ReactDOM.createPortal(
     <div className="fixed inset-0 flex justify-center items-center">
-      <div className="bg-zinc-800 rounded-lg p-6 relative w-full max-w-md md:max-w-2xl mx-4 border border-white">
+      <div className="bg-zinc-800 rounded-lg p-6 relative w-full max-w-md md:max-w-2xl mx-4 border border-slate-400">
         <button
           className="absolute top-2 right-2 bg-black text-white rounded-full w-6 h-6 flex justify-center items-center"
           onClick={onClose}

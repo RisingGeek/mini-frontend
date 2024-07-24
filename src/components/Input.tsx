@@ -24,7 +24,7 @@ const Input = (props: InputProps) => {
                     value={value}
                     onChange={onChange}
                     required={required}
-                    className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-transparent text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-transparent text-white leading-tight focus:outline-none focus:shadow-outline"
                     placeholder={placeholder}
                 />
                 {inputAddonAfter}
