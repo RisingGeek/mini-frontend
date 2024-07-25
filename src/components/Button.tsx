@@ -20,6 +20,8 @@ const Button = (props: ButtonProps) => {
         switch(btnType) {
             case ButtonType.PRIMARY:
                 return "bg-blue-500 hover:opacity-80 text-white";
+            case ButtonType.TEXT:
+                return "text-white"
             default:
                 return "";
         } 

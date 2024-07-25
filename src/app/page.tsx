@@ -1,5 +1,6 @@
 "use client"
 
+import HomeContainer from "@/modules/HomeContainer";
 import SignupForm from "@/modules/SignupForm";
 
 export default function Home() {
@@ -7,8 +8,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1 className="text-lg">hello</h1>
-     <SignupForm />
+      <HomeContainer />
     </main>
   );
 }
