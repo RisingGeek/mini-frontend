@@ -13,7 +13,7 @@ const HomeContainer = () => {
         posts.map((post) => (
           <Card
             key={post.id}
-            cardHeader={<PostHeader name={post.name} img={post.img} date={post.date} />}
+            cardHeader={<PostHeader name={post.name} img={post.img} date={post.date} isEdited={post.isEdited} />}
             cardFooter={<PostFooter commentCount={post.commentCount} />}
             renderEmoji={post.emoji}
           >

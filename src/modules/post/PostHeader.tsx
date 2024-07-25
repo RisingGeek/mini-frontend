@@ -6,10 +6,11 @@ interface PostHeaderProps {
     name: string;
     img: string;
     date: string;
+    isEdited: boolean;
 }
 
 const PostHeader = (props: PostHeaderProps) => {
-    const { name, img, date } = props;
+    const { name, img, date, isEdited } = props;
     const handlePostAction = () => { }
 
     const getPostTiming = (pastDate: Date) => {
@@ -49,7 +50,14 @@ const PostHeader = (props: PostHeaderProps) => {
                 </div>
                 <div>
                     <p className="text-white">{name}</p>
-                    <p className="text-xs text-text-default">{postTime}</p>
+                    <p className="text-xs text-text-default">
+                        {postTime}
+                        {isEdited &&
+                            <>
+                                <span className="inline-block w-1 h-1 rounded-full bg-default align-middle mx-1"></span>
+                                <span>Edited</span>
+                            </>}
+                    </p>
                 </div>
             </div>
             <Button

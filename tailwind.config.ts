@@ -16,8 +16,9 @@ const config: Config = {
       },
       colors: {
         text: {
-          default: "#7F8084"
+          default: "rgb(127, 128, 132)"
         },
+        default: "rgb(127, 128, 132)",
         "cgray-50": "rgb(127, 128, 132)",
         "cgray-100": "rgba(53, 55, 59, 1)",
         "cgray-200": "rgb(25, 25, 32)"
