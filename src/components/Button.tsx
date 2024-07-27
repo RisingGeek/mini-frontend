@@ -16,11 +16,11 @@ interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
     const { type, btnType, className = "", disabled, onClick, children } = props;
-    const commonClasses = `py-2 px-1.5 rounded ${disabled && "cursor-not-allowed"}`
+    const commonClasses = `py-2 px-1.5 rounded ${disabled && "cursor-not-allowed opacity-30"}`
     const getBtnClass = () => {
         switch (btnType) {
             case ButtonType.PRIMARY:
-                return "bg-blue-500 hover:opacity-80 text-white";
+                return `bg-blue-500 ${!disabled && "hover:opacity-80"} text-white`;
             case ButtonType.TEXT:
                 return "text-white"
             default:
