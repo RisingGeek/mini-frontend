@@ -9,28 +9,30 @@ interface ButtonProps {
     type: "button" | "reset" | "submit";
     btnType: ButtonType;
     className?: string;
+    disabled?: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
     children: ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
-    const { type, btnType, className = "", onClick, children } = props;
-    const commonClasses = "py-2 px-1.5 rounded"
+    const { type, btnType, className = "", disabled, onClick, children } = props;
+    const commonClasses = `py-2 px-1.5 rounded ${disabled && "cursor-not-allowed"}`
     const getBtnClass = () => {
-        switch(btnType) {
+        switch (btnType) {
             case ButtonType.PRIMARY:
                 return "bg-blue-500 hover:opacity-80 text-white";
             case ButtonType.TEXT:
                 return "text-white"
             default:
                 return "";
-        } 
+        }
     }
     return (
         <button
             type={type}
             className={`${commonClasses} ${getBtnClass()} ${className}`}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>

@@ -1,4 +1,4 @@
 export enum ModalId {
     LOGIN,
-    SINGUP
+    SIGNUP
 }

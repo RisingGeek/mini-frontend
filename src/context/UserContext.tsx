@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useCallback, useState } from "react";
 
 // Define the shape of the context data
 const defaultUserState = {
@@ -17,13 +17,13 @@ const UserContext = createContext(defaultUserState);
 export const UserProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState({ isLoggedIn: false, name: '' });
 
-    const logIn = (name: string) => {
+    const logIn = useCallback((name: string) => {
         setUser({ isLoggedIn: true, name });
-    };
+    }, []);
 
-    const logOut = () => {
+    const logOut = useCallback(() => {
         setUser({ isLoggedIn: false, name: '' });
-    };
+    }, []);
 
     return (
         <UserContext.Provider value={{ user, logIn, logOut }}>

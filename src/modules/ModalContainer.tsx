@@ -11,7 +11,7 @@ const ModalContainer = () => {
     switch (modalId) {
         case ModalId.LOGIN:
             return <LoginModal />
-        case ModalId.SINGUP:
+        case ModalId.SIGNUP:
             return <SignupModal />
         default:
             return null;

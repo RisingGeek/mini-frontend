@@ -1,23 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Modal from '@/components/Modal'
 import ShowPassword from '@/components/ShowPassword';
 import HidePassword from '@/components/HidePassword';
 import Input from '@/components/Input';
 import Button, { ButtonType } from '@/components/Button';
+import ModalContext from '@/context/ModalContext';
+import { ModalId } from '@/interfaces/modal.type';
+import UserContext from '@/context/UserContext';
 
 const SignupModal = () => {
-    const [isModalOpen, setIsModalOpen] = useState(true);
     const [formValues, setFormValues] = useState({ email: "", username: "", password: "" });
     const [showPassword, setShowPassword] = useState(false);
+    const { logIn } = useContext(UserContext);
+    const { openModal, closeModal } = useContext(ModalContext);
 
 
+    // Handle login logic here
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle login logic here
+        logIn(formValues.username || formValues.email);
+        closeModal();
     };
 
-    const handleRegisterClick = () => {
-
+    const handleLoginClick = () => {
+        openModal(ModalId.LOGIN);
     }
 
     const togglePasswordVisibility = () => {
@@ -26,7 +32,6 @@ const SignupModal = () => {
 
     return (
         <Modal
-            isOpen={isModalOpen}
             title="SIGN UP"
             subTitle="Create an account to continue">
             <form onSubmit={handleSubmit}>
@@ -66,6 +71,7 @@ const SignupModal = () => {
                     btnType={ButtonType.PRIMARY}
                     className="w-full"
                     onClick={handleSubmit}
+                    disabled={!(formValues.email || formValues.username)}
                 >
                     Continue
                 </Button>
@@ -75,7 +81,7 @@ const SignupModal = () => {
                         type="button"
                         btnType={ButtonType.TEXT}
                         className="text-white"
-                        onClick={handleRegisterClick}
+                        onClick={handleLoginClick}
                     >
                         Login &rarr;
                     </Button>

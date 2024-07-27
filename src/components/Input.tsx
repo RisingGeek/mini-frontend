@@ -23,7 +23,6 @@ const Input = (props: InputProps) => {
             }
             <div className={`relative mb-4 ${inputContainerClassName}`}>
                 <input
-                    id="email"
                     type={type}
                     value={value}
                     onChange={onChange}

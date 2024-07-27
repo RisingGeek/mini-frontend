@@ -1,7 +1,7 @@
 "use client";
 
 import { ModalId } from "@/interfaces/modal.type";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useCallback, useState } from "react";
 
 // Define the shape of the context data
 const defaultModalState = {
@@ -15,13 +15,13 @@ const ModalContext = createContext(defaultModalState);
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
     const [modalId, setModalId] = useState<ModalId | null>(null);
 
-    const openModal = (modalId: ModalId) => {
+    const openModal = useCallback((modalId: ModalId) => {
         setModalId(modalId);
-    };
+    }, []);
 
-    const closeModal = () => {
+    const closeModal = useCallback(() => {
         setModalId(null);
-    };
+    }, []);
 
     return (
         <ModalContext.Provider value={{ modalId, openModal, closeModal }}>
