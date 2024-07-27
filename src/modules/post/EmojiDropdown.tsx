@@ -5,7 +5,7 @@ const emojis = ['😀', '😂', '😍', '😎', '😢', '😡'];
 const EmojiDropdown = () => {
     const [selectedEmoji, setSelectedEmoji] = useState(emojis[0]);
     const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -17,7 +17,7 @@ const EmojiDropdown = () => {
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         };

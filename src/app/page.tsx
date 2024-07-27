@@ -4,7 +4,6 @@ import ModalContext from "@/context/ModalContext";
 import UserContext from "@/context/UserContext";
 import { ModalId } from "@/interfaces/modal.type";
 import HomeContainer from "@/modules/HomeContainer";
-import SignupForm from "@/modules/SignupForm";
 import { useContext, useEffect } from "react";
 
 export default function Home() {

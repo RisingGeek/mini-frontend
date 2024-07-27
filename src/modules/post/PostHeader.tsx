@@ -6,7 +6,7 @@ interface PostHeaderProps {
     name: string;
     img: string;
     date: string;
-    isEdited: boolean;
+    isEdited?: boolean;
 }
 
 const PostHeader = (props: PostHeaderProps) => {
@@ -16,10 +16,10 @@ const PostHeader = (props: PostHeaderProps) => {
     const getPostTiming = (pastDate: Date) => {
         const now = new Date(); // Current date and time
         const past = new Date(pastDate); // Provided date and time
-        const diffMs = now - past; // Difference in milliseconds
+        const diffMs = now.getTime() - past.getTime(); // Difference in milliseconds
 
         // Calculate time differences
-        const diffMinutes = Math.floor(diffMs / (1000 * 60)); // Minutes
+        const diffMinutes = Math.floor(diffMs / 60000); // Minutes
         const diffHours = Math.floor(diffMinutes / 60); // Hours
         const diffDays = Math.floor(diffHours / 24); // Days
 
