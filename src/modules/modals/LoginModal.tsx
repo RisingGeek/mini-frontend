@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import Modal from '../components/Modal'
+import Modal from '../../components/Modal'
 import ShowPassword from '@/components/ShowPassword';
 import HidePassword from '@/components/HidePassword';
 import Input from '@/components/Input';
 import Button, { ButtonType } from '@/components/Button';
 
-const LoginForm = () => {
+const LoginModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [formValues, setFormValues] = useState({username: "", password: ""});
   const [showPassword, setShowPassword] = useState(false);
@@ -80,4 +80,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm;
+export default LoginModal;

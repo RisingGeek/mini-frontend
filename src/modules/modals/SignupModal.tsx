@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import Modal from '../components/Modal'
+import Modal from '@/components/Modal'
 import ShowPassword from '@/components/ShowPassword';
 import HidePassword from '@/components/HidePassword';
 import Input from '@/components/Input';
 import Button, { ButtonType } from '@/components/Button';
 
-const SignupForm = () => {
+const SignupModal = () => {
     const [isModalOpen, setIsModalOpen] = useState(true);
     const [formValues, setFormValues] = useState({ email: "", username: "", password: "" });
     const [showPassword, setShowPassword] = useState(false);
@@ -85,4 +85,4 @@ const SignupForm = () => {
     )
 }
 
-export default SignupForm;
+export default SignupModal;
