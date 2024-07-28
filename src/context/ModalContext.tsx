@@ -10,6 +10,7 @@ const defaultModalState = {
     closeModal: () => { },
 };
 
+// ModalContext hold the value of the modal that is currently open
 const ModalContext = createContext(defaultModalState);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
@@ -28,6 +29,6 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
             {children}
         </ModalContext.Provider>
     );
-}
+};
 
 export default ModalContext;

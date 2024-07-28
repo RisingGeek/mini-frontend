@@ -1,14 +1,15 @@
-import Button, { ButtonType } from '@/components/Button'
-import Card from '@/components/Card'
-import Input from '@/components/Input'
-import React, { useState } from 'react'
-import EmojiDropdown from './EmojiDropdown'
+import Button, { ButtonType } from '@/components/Button';
+import Card from '@/components/Card';
+import Input from '@/components/Input';
+import { useState } from 'react';
+import EmojiDropdown from './EmojiDropdown';
 
+// Card for create post
 const CreatePost = () => {
     const [postInput, setPostInput] = useState("");
     const handleCreatePost = () => {
-
-    }
+        // do something when Post button is clicked
+    };
 
     return (
         <Card
@@ -34,7 +35,7 @@ const CreatePost = () => {
                 className="border-0"
             />
         </Card>
-    )
-}
+    );
+};
 
-export default CreatePost
+export default CreatePost;

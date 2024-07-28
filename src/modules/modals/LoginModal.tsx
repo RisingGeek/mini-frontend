@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
-import Modal from '../../components/Modal'
-import ShowPassword from '@/components/ShowPassword';
-import HidePassword from '@/components/HidePassword';
-import Input from '@/components/Input';
 import Button, { ButtonType } from '@/components/Button';
-import UserContext from '@/context/UserContext';
+import Input from '@/components/Input';
 import ModalContext from '@/context/ModalContext';
+import UserContext from '@/context/UserContext';
 import { ModalId } from '@/interfaces/modal.type';
+import HidePasswordSvg from '@/resources/HidePasswordSvg';
+import ShowPasswordSvg from '@/resources/ShowPasswordSvg';
+import React, { useContext, useState } from 'react';
+import Modal from '../../components/Modal';
 
 const LoginModal = () => {
   const [formValues, setFormValues] = useState({ username: "", password: "" });
@@ -22,8 +22,8 @@ const LoginModal = () => {
   };
 
   const handleRegisterClick = () => {
-    openModal(ModalId.SIGNUP)
-  }
+    openModal(ModalId.SIGNUP);
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -58,7 +58,7 @@ const LoginModal = () => {
             className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500 leading-5 cursor-pointer"
             onClick={togglePasswordVisibility}
           >
-            {showPassword ? <ShowPassword /> : <HidePassword />}
+            {showPassword ? <ShowPasswordSvg /> : <HidePasswordSvg />}
           </div>)}
           onChange={(e) => setFormValues({ ...formValues, password: e.target.value })}
         />
@@ -84,7 +84,7 @@ const LoginModal = () => {
         </div>
       </form>
     </Modal>
-  )
-}
+  );
+};
 
 export default LoginModal;

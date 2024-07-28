@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
 import Card from '@/components/Card';
+import UserContext from '@/context/UserContext';
 import posts from "@/posts.json";
+import { useContext } from 'react';
+import CreatePost from './post/CreatePost';
 import PostFooter from './post/PostFooter';
 import PostHeader from './post/PostHeader';
-import CreatePost from './post/CreatePost';
-import UserContext from '@/context/UserContext';
 
 const HomeContainer = () => {
   const { user } = useContext(UserContext);
@@ -27,7 +27,7 @@ const HomeContainer = () => {
       }
 
     </div>
-  )
-}
+  );
+};
 
-export default HomeContainer
+export default HomeContainer;

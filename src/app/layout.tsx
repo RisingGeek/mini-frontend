@@ -1,9 +1,9 @@
+import { ModalProvider } from "@/context/ModalContext";
+import { UserProvider } from "@/context/UserContext";
+import ModalContainer from "@/modules/ModalContainer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { UserProvider } from "@/context/UserContext";
-import { ModalProvider } from "@/context/ModalContext";
-import ModalContainer from "@/modules/ModalContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`overflow-x-hidden ${inter.className}`}>
         <UserProvider>
           <ModalProvider>
             <ModalContainer />

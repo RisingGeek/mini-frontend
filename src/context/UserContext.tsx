@@ -12,6 +12,7 @@ const defaultUserState = {
     logOut: () => { },
 };
 
+// UserContext hold the value of user and loggedin status
 const UserContext = createContext(defaultUserState);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
@@ -30,6 +31,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
             {children}
         </UserContext.Provider>
     );
-}
+};
 
 export default UserContext;

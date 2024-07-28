@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode } from 'react'
+import { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode } from 'react';
 
 interface InputProps {
     type: HTMLInputTypeAttribute;
@@ -12,6 +12,8 @@ interface InputProps {
     className?: string;
     onChange: ChangeEventHandler<HTMLInputElement>;
 }
+
+// Reusable Input component
 const Input = (props: InputProps) => {
     const { type, value, placeholder, label, labelClass, required, inputAddonAfter,inputContainerClassName="", className = "", onChange } = props;
     return (
@@ -34,7 +36,7 @@ const Input = (props: InputProps) => {
                 {inputAddonAfter}
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Input
+export default Input;

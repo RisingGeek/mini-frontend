@@ -1,5 +1,4 @@
-import CommentSvg from '@/components/CommentSvg'
-import React from 'react'
+import CommentSvg from '@/resources/CommentSvg';
 
 interface PostFooterProps {
   commentCount: number;
@@ -13,7 +12,7 @@ const PostFooter = (props: PostFooterProps) => {
       </span>
       <span className="text-cgray-50">{commentCount} comments</span>
     </div>
-  )
-}
+  );
+};
 
-export default PostFooter
+export default PostFooter;

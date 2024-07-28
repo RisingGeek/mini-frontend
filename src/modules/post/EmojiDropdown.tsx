@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const emojis = ['😀', '😂', '😍', '😎', '😢', '😡'];
 
+// Emoji dropdown to select emoji while creating post
 const EmojiDropdown = () => {
     const [selectedEmoji, setSelectedEmoji] = useState(emojis[0]);
     const [isOpen, setIsOpen] = useState(false);

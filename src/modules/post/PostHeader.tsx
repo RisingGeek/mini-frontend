@@ -1,6 +1,5 @@
-import Button, { ButtonType } from '@/components/Button'
+import Button, { ButtonType } from '@/components/Button';
 import Image from 'next/image';
-import React from 'react'
 
 interface PostHeaderProps {
     name: string;
@@ -11,7 +10,7 @@ interface PostHeaderProps {
 
 const PostHeader = (props: PostHeaderProps) => {
     const { name, img, date, isEdited } = props;
-    const handlePostAction = () => { }
+    const handlePostAction = () => { };
 
     const getPostTiming = (pastDate: Date) => {
         const now = new Date(); // Current date and time
@@ -68,7 +67,7 @@ const PostHeader = (props: PostHeaderProps) => {
                 ...
             </Button>
         </div>
-    )
-}
+    );
+};
 
-export default PostHeader
+export default PostHeader;
