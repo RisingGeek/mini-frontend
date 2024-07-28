@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 interface CardProps {
     cardHeader: ReactNode;
@@ -9,8 +9,14 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
     const { cardHeader, cardFooter, renderEmoji, children } = props;
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, [])
     return (
-        <div className="bg-cgray-100 rounded-md py-4 px-4 my-4">
+        <div className={`bg-cgray-100 rounded-md py-4 px-4 my-4 transition-transform duration-500 transform 
+        ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}>
             {cardHeader}
             <div className="flex gap-3 bg-cgray-200 p-4 rounded-md my-2">
                 <div className="flex items-center justify-center w-12 h-12 bg-cgray-100 rounded-full flex-shrink-0">
