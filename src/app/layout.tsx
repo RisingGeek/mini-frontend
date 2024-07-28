@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`overflow-x-hidden ${inter.className}`}>
+      <body className={inter.className}>
         <UserProvider>
           <ModalProvider>
             <ModalContainer />
